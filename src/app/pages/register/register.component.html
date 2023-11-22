@@ -1,0 +1,24 @@
+<form [formGroup]="fg" (ngSubmit)="submit()">
+
+    <div class="form-group">
+        <label>Email</label>
+        <input type="email" required formControlName="email">
+    </div>
+
+    <div class="form-group">
+        <label>Nationalité</label>
+        <select formControlName="nationality">
+            <option *ngFor="let country of countries" [ngValue]="country.cca2">{{ country.translations.fra.common }}</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Registre national</label>
+        <input type="text" formControlName="ssn">
+    </div>
+
+    <div class="form-group">
+        <input type="submit">        
+    </div>
+
+</form>
